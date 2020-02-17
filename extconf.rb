@@ -62,5 +62,5 @@ EOM
   end
 end
 
-system "sh bootstrap"
-system "#{env} sh configure --with-ruby=#{with_ruby} --prefix=#{prefix_dir} #{other_opts}"
+# system "sh bootstrap"
+# system "#{env} sh configure --with-ruby=#{with_ruby} --prefix=#{prefix_dir} #{other_opts}"

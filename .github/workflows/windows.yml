@@ -20,3 +20,4 @@ jobs:
         bundle exec ruby extconf.rb
         make
         bundle exec rake test
+      shell: cmd
