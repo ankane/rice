@@ -45,3 +45,8 @@ TESTCASE(what)
   ASSERT_EQUAL(foo, ex.what());
 }
 
+TESTCASE(class)
+{
+  Exception ex(rb_eArgError, "%s", "foo");
+  ASSERT_EQUAL(ex.class_of(), Object(rb_eArgError));
+}
