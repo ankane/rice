@@ -1,0 +1,24 @@
+name: build
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest] #[ubuntu-latest, macos-latest, windows-latest]
+        ruby: [2.7] # [3.0, 2.7, 2.6, 2.5]
+    steps:
+    - uses: actions/checkout@v2
+    - if: ${{ startsWith(matrix.os, 'macos') }}
+      name: Install automake on Mac
+      run: brew install automake
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
+        bundler-cache: true
+    - run: |
+        sh bootstrap
+        bundle exec ruby extconf.rb
+        make
+        bundle exec rake
