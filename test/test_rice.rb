@@ -35,7 +35,7 @@ class RiceTest < Minitest::Test
         puts result
       end
     end
-    raise "Error: $?" if $? != 0
+    raise "Error: #{$?}" if $? != 0
   end
 end
 
