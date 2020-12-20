@@ -6,8 +6,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest] #[ubuntu-latest, macos-latest, windows-latest]
-        ruby: [2.7] # [head, 2.7, 2.6, 2.5]
+        os: [ubuntu-latest, macos-latest] #[ubuntu-latest, macos-latest, windows-latest]
+        ruby: [3.0.0-preview2] # [3.0.0-preview2, 2.7, 2.6, 2.5]
     steps:
     - uses: actions/checkout@v2
     - if: ${{ startsWith(matrix.os, 'macos') }}
