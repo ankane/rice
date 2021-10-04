@@ -6498,7 +6498,7 @@ namespace Rice
   template<typename T>
   class Data_Type : public Class
   {
-    static_assert(std::is_same_v<detail::intrinsic_type<T>, T>);
+    static_assert(std::is_same_v<detail::intrinsic_type<T>, T>, "message");
 
   public:
     //! Default constructor which does not bind.
@@ -7119,10 +7119,10 @@ namespace Rice
   template<typename T>
   class Data_Object : public Object
   {
-    static_assert(!std::is_pointer_v<T>);
-    static_assert(!std::is_reference_v<T>);
-    static_assert(!std::is_const_v<T>);
-    static_assert(!std::is_volatile_v<T>);
+    static_assert(!std::is_pointer_v<T>, "message");
+    static_assert(!std::is_reference_v<T>, "message");
+    static_assert(!std::is_const_v<T>, "message");
+    static_assert(!std::is_volatile_v<T>, "message");
 
   public:
     static T* from_ruby(VALUE value);
