@@ -1,3 +1,4 @@
+#include <vector>
 #include <rice/rice.hpp>
 #include <ruby/version.h>
 
