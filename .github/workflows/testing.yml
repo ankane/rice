@@ -27,5 +27,5 @@ jobs:
       run: rake build
     - name: Test
       run: rake test
-    - if: ${{ failure() }}
-      run: cat test/Makefile
+    - run: cat test/Makefile
+      # if: ${{ failure() }}
