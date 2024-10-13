@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos-latest]
-        ruby: ['3.2']
+        ruby: ['3.1']
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
@@ -28,4 +28,4 @@ jobs:
     - name: Test
       run: rake test
     - run: cat test/Makefile
-      # if: ${{ failure() }}
+      if: ${{ always() }}
