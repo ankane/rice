@@ -15,7 +15,7 @@ create_makefile(target_exe) do |conf|
   if IS_MSWIN
     conf << "\t$(Q) $(CXX) -Fe$(@) $(OBJS) $(LIBS) $(LOCAL_LIBS) -link $(ldflags) $(LIBPATH)"
   else
-    conf << "\t$(Q) $(CXX) -o $@ $(OBJS) $(LIBPATH) $(DLDFLAGS) $(LOCAL_LIBS) $(LIBS)"
+    conf << "\t$(Q) $(CXX) -o $@ $(OBJS) $(LIBPATH) $(LOCAL_LIBS) $(LIBS)"
   end
 
   conf << "\n"
