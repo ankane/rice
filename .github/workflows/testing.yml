@@ -26,6 +26,6 @@ jobs:
     - name: Build
       run: rake build
     - if: ${{ failure() }}
-      run: cat tmp/mkmf.log
+      run: cat test/mkmf.log
     - name: Test
       run: rake test
