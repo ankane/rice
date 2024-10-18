@@ -1138,7 +1138,7 @@ namespace Rice::detail
       }
     }
 
-    this->natives_.emplace(std::make_pair(key(klass, method_id), std::make_tuple(klass, method_id, callable)));
+    this->natives_.insert({key(klass, method_id), std::make_tuple(klass, method_id, callable)});
   }
 
   template <typename Return_T>
