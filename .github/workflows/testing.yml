@@ -25,5 +25,7 @@ jobs:
       run: rake headers
     - name: Build
       run: rake build
+    - if: ${{ failure() }}
+      run: cat tmp/mkmf.log
     - name: Test
       run: rake test
